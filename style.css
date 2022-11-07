@@ -1,0 +1,155 @@
+*,:before,:after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Nunito 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    ;
+}
+
+/* navigation */
+nav{
+    position: fixed;
+    height: 70px;
+    width:100%;
+    background: linear-gradient(to bottom,#333,#626262);
+    z-index: 10;
+}
+.logo-menu{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width:50px;
+    z-index: 25;
+    display: none;
+}
+.liste-nav{
+    background: linear-gradient(to bottom,#333,#626262);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+    list-style-type: none;
+    z-index: 20;
+}
+.item-nav{
+    display: flex;
+    align-items: center;
+}
+.item-nav a {
+    font-size: 22px;
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+.item-nav a::after{
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    height: 2px;
+    background: #f1f1f1;
+    transition: width 0.2s ease-in-out;
+}
+.item-nav a:hover::after{
+    width: 100%;
+}
+@media screen and (max-width:700px) {
+    .logo-menu{
+        display: block;
+    }
+    .liste-nav{
+        padding-top: 70px;
+        flex-direction: column;
+        height: auto;
+        position: relative;
+        display: none;
+    }
+    .liste-nav.active{
+        display: block;
+    }
+    .item-nav{
+        height: 70px;
+        justify-content: center;
+    }
+    
+}
+
+/* acceuil */
+
+.acceuil{
+    width: 100%;
+    height: 100vh;
+    min-height: 970px;
+    background-image: url(ressources/accueil-pic-lum-down.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    border-radius: 1px dotted #777;
+    padding-top: 1px;
+}
+.logo-kyoto{
+    border-radius: 50%;
+    width:  180px;
+    display: block;
+    margin: 179px auto 0 ;
+ 
+}
+.acceuil h1 { 
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 0 0 10px #000;
+    color:#f1f1f1;
+    margin-top: 10px;
+    font-family: Merienda one,sans-serif;
+}
+.sous-titre {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #f1f1f1;
+    margin: 5px 0;
+    text-shadow: 0 0 10px #000;
+}
+.btn-acceuil{
+    border-radius: 9999px;
+    background: crimson;
+    border: 1px solid #3333;
+    color: #f1f1f1;
+    font-size: 22px;
+    display: block;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    text-decoration: none;
+    text-align: center;
+    margin: 30px auto 0;;
+}
+.btn-acceuil:hover{
+    background-color: rgb(177, 0, 36);
+    color: #f1f1f1;
+}
+@media screen and (max-width:850px ) {
+    .acceuil{
+          height: 650px;
+          min-height: auto;
+    }
+    .logo-kyoto{
+        margin: 120px auto 0;
+    }
+    .acceuil h1{
+        font-size: 60px;
+    }
+    .sous-titre{
+        font-size: 23px ;
+    }
+    .btn-acceuil{
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        margin: 15px auto 0;
+    }
+    
+}
