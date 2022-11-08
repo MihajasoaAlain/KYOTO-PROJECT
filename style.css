@@ -288,7 +288,343 @@ nav{
     border-left: 1px solid #333;
 }
 /*ligne de droite*/
-.ligne-droire{
+.ligne-droite{
     grid-area: 1/3/-1/4;
     border-left: 1px solid #333;
 }
+
+
+@media  screen and (max-width:1200px) {
+    .section-asymetrique {
+        grid-template :200px repeat(6,auto) 100px / 1fr 600px 1fr;
+    }
+    .section-asymetrique h2{
+        font-size: 50px;
+        padding-bottom: 0px;
+    }
+    .blox1{
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .img-grid-1{
+        grid-area: 3 / 2 / 4 / 3;
+    }
+    .bloc-right {
+        grid-area: 4 / 2 / 5 /3;
+    }
+    .img-grid-2 {
+        grid-area: 5 / 2 / 6 / 3;
+    }
+    .bloc-3 {
+        grid-area: 6 / 2 / 7 /3;
+    }
+    .img-grid-3{
+        grid-area: 7 / 2 / 8 / 3 ;
+    }
+    .bloc{
+        height: 100%;
+        margin-bottom: 0px;
+    }
+    .img-grid{
+        position: static;
+        width: 600px;
+        height: 750px;
+    }
+    .img-grid-1,
+    .img-grid-3{
+        top: 0px;
+        left: 0px ;  
+    }
+    .img-grid-2{
+        top: 0px;
+        left: 0px ;  
+    }
+    
+.bloc-left{
+    left: 0px;
+}
+.bloc-right{
+    right: 0px;
+}
+.bloc-txt-left{
+    width: 100%;
+    height: 100%;
+}
+.bloc-left h3,
+.bloc-right h3 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.8;
+    padding: 15px;
+}
+.bloc-txt-left p,
+.bloc-txt-right p {
+    font-size: 20px;
+    line-height: 1.8;
+    padding: 15px;
+}
+.bloc button{
+    font-size: 20px;
+    padding: 15px 30px ;
+    margin-bottom: 30px;
+}
+.bloc-txt-right {
+    position: static;
+    width: 100%;
+    height: 100%;
+}
+}
+
+@media screen and (max-width : 600px) {
+    .section-asymetrique {
+        grid-template: 150px repeat(6,auto) 100px /100% ;
+    }
+    .ligne-gauche ,
+    .ligne-droite {
+        display: none;
+    }
+    .section-asymetrique h2{
+        font-size: 30px;
+    }
+    .bloc,
+    .img-grid{
+        grid-area: auto;
+    }
+    .img-grid{
+        width: 100%;
+        height: 100%;
+    }
+    .bloc-txt-right {
+        width: 100%;
+    }
+    .bloc-txt-left h3
+    .bloc-txt-right h3{
+        font-size: 25px;
+    }
+}
+
+/* section parralax */
+.parallax {
+    width: 100%;
+    height: 300px;
+    background:url(ressources/parallax-large-flou.jpg) ;
+    background-position: center;
+    background-attachment: fixed;/*permet de fixer l'image même e, scrollant,qui nous donne l'effet*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.parallax p {
+    font-size: 65px;
+    color: #f1f1f1;
+}
+.parallax span {
+    display: block;
+    font-size: 25px;
+    color: #f1f1f1;
+}
+
+/* section tarifs */
+
+.section-tarifs {
+    padding-bottom: 150px;
+    border-bottom:1px dashed #333 ;
+}
+.section-tarifs h3{
+    text-align: center;
+    font-size: 45px;
+    margin: 120px 0 20px;
+    padding: 0 30px;
+}
+.section-tarifs hr{
+    width: 200px;
+    margin: 20px auto 100px;
+}
+.container-tarifs{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cartes-tarifs {
+    width: 350px;
+    height: auto  ;
+    border-radius: 5px;
+    margin: 15px 15px ;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    transition: all .2s ease-in-out ;
+
+}
+.cartes-tarifs:hover{
+    transform: translateY(-5px);
+}
+.cartes-tarifs h4 {
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 35px;
+    clip-path: polygon(0 0,100% 0%,100% 80% ,0 100%);
+    background: #ffafbf;
+}
+.cartes-tarifs span {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.cartes-tarifs:nth-child(2) h4{
+    background: #ff5073;
+}
+
+.cartes-tarifs:nth-child(3) h4{
+    background: #ff0033;
+}
+.cartes-tarifs p{
+    font-size: 18px;
+    padding: 20px 10px;
+    border-top: 1px solid rgb(194, 197, 194);
+}
+.cartes-tarifs p:last-of-type{
+    border-bottom: 1px solid rgb(194, 197, 194);
+}
+.cartes-tarifs p:nth-child(odd){
+    background: rgba(195, 195, 195, .219)
+}
+.cartes-tarifs a {
+    display: block;
+    text-decoration: none;
+    border: 1px solid #333;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 9999px;
+    color: #333;
+    font-size: 18px;
+    line-height: 50px;
+    margin: 20px auto;
+    transition: all .2s ease-in-out;
+}
+.cartes-tarifs a:hover{
+    background: #333;
+    color: #f1f1f1 ;
+}
+@media  screen and (max-width : 900px) {
+    .section-tarifs h3{
+        font-size: 35px ;
+        margin: 80px 0 80px;
+        padding: 0 10px;
+    }
+}
+@media  screen and (max-width : 425px) {
+    .section-tarifs h3{
+        font-size: 30px ;
+        padding: 0 10px;
+        margin: 50px 0 ;
+    }
+    .section-tarifs hr{
+        width: 200px;
+        margin: 20px auto 20px;
+    }
+}
+
+/* section contact */
+.section-contact {
+    padding-bottom: 100px;
+}
+.section-contact h2 {
+    text-align: center;
+    color: #333;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    padding: 70px 0 0 0;
+}
+.container-form {
+    margin: 0 auto;
+    width: 70%;
+
+}
+.form-groupe{
+    position: relative;
+    margin-bottom: 45px;
+}
+.form-groupe label{
+    color: #aaa;
+    font-size: 20px;
+}
+.form-groupe input{
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    background: none;
+    border-bottom: 3px solid #aaa;
+    color: #666;
+    font-size: 20px;
+}
+textarea{
+    width: 100%;
+    height: 200px;
+    border: none;
+    border: 3px solid #aaa;
+    border-radius: 3px;
+    padding: 5px;
+    resize: none;
+    outline: none;
+    background: #f1f1f1;
+    font-size: 20px;
+}
+.form-groupe:nth-child(4){
+    margin-bottom: 25px;
+}
+.form-groupe .button-sub{
+    display: block;
+    width: auto;
+    padding: 15px 60px ;
+    border: 3px solid rgb(144, 144, 144);
+    border-radius: 9999px;
+    background-image: linear-gradient(to right ,transparent 50%,rgb(65,65,65) 50% ,rgb(134,134,134));
+    background-size: 200%;
+    color: #333;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .5s ease-out;
+}
+.form-groupe .button-sub:hover{
+    color: #f1f1f1;
+    background-position: 100%;
+    border: 3px solid #fff;
+}
+@media  screen and (max-width:1300px) {
+    .section-contact h2 {
+        padding: 70px 0 0 0;
+
+    }  
+    .container-form {
+        padding-left:0 ;
+    }
+}
+/* footer */
+footer{
+    border-top: 1px solid #333;
+    width: 100%;
+    text-align: center;
+    padding:10px 0 ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
